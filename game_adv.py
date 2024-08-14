@@ -1,5 +1,5 @@
 import random
-import time
+
 
 print("********************")
 print("BEM VINDO AO JOGO")
@@ -16,9 +16,18 @@ elif dif == "M":
 else:
     n_tentativa = 5
 
-    random.seed(time.time)
-    nmr_secreto = random.randit(0,50)
+   
+    nmr_secreto = random.randint(0,99)
     
 n_acertou = True
 tentativas = 0
 pontos = 1000.0
+
+
+for tentativas in range (1,n_tentativa+1):
+    print(f"Tentativa = {tentativas}")
+    chute = int(input("Chute um número: "))
+
+    print (f"O número que você chutou é: {chute}")
+    acertou = chute == nmr_secreto
+    maior = chute > nmr_secreto
